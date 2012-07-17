@@ -25,7 +25,7 @@ DATABASES = {
 
 # Make this unique, and don't share it with anybody.
 # you want to change this in localsettings.
-SECRET_KEY = None
+SECRET_KEY = ''
 
 
 # Local time zone for this installation. Choices can be found here:
@@ -44,7 +44,7 @@ LANGUAGE_CODE = 'en-us'
 
 # from
 # http://morethanseven.net/2009/02/11/django-settings-tip-setting-relative-paths.html
-import os,django
+import os, django
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
@@ -204,4 +204,11 @@ LOGOUT_URL = '/accounts/signout/'
 
 DEMO_MODE = False # make all users admin per default
 
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False
+}
 
+try:
+    from local_settings import *
+except ImportError:
+    pass
