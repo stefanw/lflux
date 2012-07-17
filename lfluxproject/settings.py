@@ -209,6 +209,6 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 
 try:
-    from local_settings import *
+    from localsettings import *
 except ImportError:
     pass
