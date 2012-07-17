@@ -7,3 +7,16 @@ Our mockups and a self-hosted version for this projects' progress information ca
 This project is supported and financed by the Internet Foundation Austria as part of the 6th netidee [1] call.
 
 [1] http://netidee.at
+
+
+Setup
+-----
+
+Setup a new virtualenv and run the following
+
+    pip install -r requirements.txt
+    cd lfluxproject/
+    python manage.py syncdb
+    python manage.py migrate
+
+You possibly have to run the last two commands more than once if you encounter errors.
